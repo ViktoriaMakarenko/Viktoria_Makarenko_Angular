@@ -25,7 +25,12 @@ Scope.prototype.watch = function(watchFn, listenerFn, valueEq){
 	}
 };
 
-
+Scope.prototype.watchGroup = function(watchExpressions, listenerFn){
+		var self=this;
+		_.forEach(watchExpressions, function(watchExpression) {
+										self.watch(watchExpression, listenerFn);
+									});
+}
 
 Scope.prototype.digest = function(){
 	var self = this;
@@ -122,5 +127,3 @@ Scope.prototype.clearPhase = function(){
 	this.$$phase = null;
 };
 
-
- 
