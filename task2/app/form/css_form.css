@@ -1,0 +1,63 @@
+body{
+	text-align: center;
+}
+form{
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 50px 50px 10px;
+	margin: 100px auto;
+	background: rgb(221, 221, 221);
+	border: 2px solid #303030;
+	border-radius: 10px;
+}
+form>div{
+	text-align: left;
+}
+label{
+	display: inline-block;
+	width: 70px;
+}
+input{
+	height: 30px;
+	font-size: 16px;
+	margin-bottom: 40px;
+	padding: 5px 10px;
+}
+h1[ng-show]{
+	height: 50px;
+	margin-top: 0;
+	margin-bottom: -50px;
+}
+div[ng-show]{
+	margin-left: 75px;
+	text-align: center;
+	color: red;
+	font-size: 14px;
+	margin-top: -40px;
+	height: 40px;
+	max-width: 200px;
+}
+button + div[ng-show]{
+	max-width: 100%;
+	margin-left: 0;
+}
+button{
+	font-size: 20px;
+	font-weight: bold;
+	padding: 10px 15px;
+	margin-bottom: 40px;
+}
+.ng-touched.ng-invalid {
+ 	border: 2px solid red;
+}
+.ng-touched.ng-valid {
+ 	border: 2px solid green;
+}
+.form_name{
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+

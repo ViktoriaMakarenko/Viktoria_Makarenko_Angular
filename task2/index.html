@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="form">
+<head>
+	<meta charset="UTF-8">
+	<title>Viktoria Makarenko Task2</title>
+	<link type="text/css" rel="stylesheet" href="app/form/css_form.css"/>
+	<script type="application/javascript" src="node_modules/angular/angular.min.js"></script>
+	<script type="application/javascript" src="app/form/validate.js"></script>
+</head>
+<body>
+	<h1 ng-show="userForm.$submitted && userForm.$valid">Hello, {{name}}!</h1>
+	</form>
+	<form novalidate name="userForm">
+		<div class="form_name">Registration</div>
+		<div>
+			<label for="name">Name: </label>
+			<input type="text" name="name" ng-model="name" ng-model-options="{updateOn: 'blur'}" string ng-minlength="3" placeholder="Enter your name" required/>
+			<div ng-show="userForm.name.$touched && userForm.name.$error.required">Enter your name, please.</div> 
+			<div ng-show="userForm.name.$touched && userForm.name.$error.minlength">It should be more than 3 letters.</div>
+			<div ng-show="userForm.name.$touched && userForm.name.$invalid && !userForm.name.$error.minlength && !userForm.name.$error.required">First and only first letter should be in uppercase.</div>
+		</div>
+		<div>
+			<label for="age">Age: </label>
+			<input type="text" name="age" ng-model="age" ng-model-options="{updateOn: 'blur'}" integer placeholder="Enter your age" required>
+			<div ng-show="userForm.age.$touched && userForm.age.$error.required">Enter your age, please.</div> 
+			<div ng-show="userForm.age.$touched && userForm.age.$invalid && !userForm.age.$error.required">Your age is not allowed.</div>
+		</div>
+		<div>
+			<label for="date">Date: </label>
+			<input type="text" name="date" ng-model="date" ng-model-options="{updateOn: 'blur'}" date ng-minlength="10" ng-maxlength="10" placeholder="DD.MM.YYYY" required>
+			<div ng-show="userForm.date.$touched && userForm.date.$error.required">Enter the date, please.</div> 
+			<div ng-show="userForm.date.$touched && userForm.date.$invalid && !userForm.date.$error.required">Incorrect date. Please enter the date in the format DD.MM.YYYY .</div>
+		</div>
+		<button type="submit">Submit</button>
+		<div ng-show="userForm.$submitted && userForm.$invalid">Incorrect input data.</div>
+</body>
+</html>
