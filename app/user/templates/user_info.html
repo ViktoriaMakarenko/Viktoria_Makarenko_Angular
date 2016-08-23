@@ -1,0 +1,25 @@
+<div class="center">
+    <div class="font0 left">
+        <div class="inline_block tab active">{{'USER_INFO' | translate}}</div>
+        <div class="inline_block tab" ui-sref="update-user-info">{{'UPDATE_INFO' | translate}}</div>
+    </div>
+    <div>
+        <div class="form_name">{{'PROFILE' | translate}}</div>
+        <div>
+            <div class="inline_block label">{{'FIRST_NAME' | translate}}:</div>
+            <div class="inline_block input">{{userInfo.firstName}}</div>
+        </div>
+        <div>
+            <div class="inline_block label">{{'LAST_NAME' | translate}}:</div>
+            <div class="inline_block input">{{userInfo.lastName}}</div>
+        </div>
+        <div>
+            <div class="inline_block label">{{'AGE' | translate}}:</div>
+            <div class="inline_block input">{{userInfo.age}}</div>
+        </div>
+        <div>
+            <div class="inline_block label">{{'BIRTHDAY' | translate}}:</div>
+            <div class="inline_block input">{{userInfo.birthday}}</div>
+        </div>
+    </div>
+</div>

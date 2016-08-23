@@ -1,0 +1,30 @@
+<div class="wrapper">
+	<header class="inline_block justify">
+		<div class="content_wrapper">
+			<div class="inline_block center">
+				<img src="app/images/logo.jpg" class="inline_block logo"/>
+				<p>app</p>
+			</div>
+			<div class="inline_block buttons center">
+				<button ng-click="switchLang('ru')" class="ru inline_block">{{'RU' | translate}}</button>
+				<button ng-click="switchLang('en')" class="en active inline_block">{{'EN' | translate}}</button>
+			</div>
+			<div class="inline_block right_top">
+				<div class="greeting inline_block" ng-show="name">{{'YOU' | translate}}: {{name}}</div>
+				<button ng-show="loggined" ng-click="mainPage.logout()" class="inline_block">{{'LOGOUT' | translate}}</button>
+			</div>
+			<div class="inline_block helper_justify"></div>
+		</div>
+	</header>
+	<div class="content_wrapper">
+		<div class="mask" ng-show="loading">
+			<img src="app/images/loader.gif" class="loader"/>
+		</div>
+		<ui-view></ui-view>
+	</div>
+</div>
+<footer>
+	<div class="content_wrapper">
+		&copy; 2016
+	</div>
+</footer>

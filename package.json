@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "author": "Viktoria Makarenko",
+  "dependencies": {
+    "angular": "1.5.7",
+    "angular-animate": "1.5.8",
+    "angular-aria": "1.5.8",
+    "angular-material": "1.1.0-rc.5",
+    "angular-translate": "2.11.1",
+    "angular-translate-loader-static-files": "2.11.1",
+    "angular-ui-router": "0.3.1",
+    "body-parser": "1.15.2",
+    "connect-pause": "0.1.0",
+    "express": "4.14.0",
+    "express-err": "1.0.1",
+    "express-session": "1.14.0",
+    "moment": "2.14.1",
+    "node-cache": "3.2.1"
+  },
+  "main": "main.js"
+}

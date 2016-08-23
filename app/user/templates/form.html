@@ -1,0 +1,40 @@
+<div class="center">
+	<div class="font0 left">
+		<div class="inline_block tab" ui-sref="user">{{'USER_INFO' | translate}}</div>
+		<div class="inline_block tab active">{{'UPDATE_INFO' | translate}}</div>
+	</div>
+
+	<form novalidate name="userForm" class="inline_block">
+			<div class="form_name">{{'NEW_INFO' | translate}}</div>
+			<div>
+				<label for="firstName">{{'FIRST_NAME' | translate}}:</label>
+				
+				<input type="text" name="firstName" ng-model="userProfile.firstName" ng-model-options="{updateOn: 'blur'}" namevalidation ng-minlength="3" placeholder="Enter your first name" required/>
+				<div ng-show="userForm.firstName.$touched && userForm.firstName.$error.required">{{'NO_FIRST_NAME_MESSAGE' | translate}}.</div> 
+				<div ng-show="userForm.firstName.$touched && userForm.firstName.$error.minlength">{{'INPUT_LESS_THAN_3_LETTERS_MESSAGE' | translate}}.</div>
+				<div ng-show="userForm.firstName.$touched && userForm.firstName.$invalid && !userForm.firstName.$error.minlength && !userForm.firstName.$error.required">{{'INCORRECT_UPPERCASE_LETTERS_MESSAGE' | translate}}.</div>
+			</div>
+			<div>
+				<label for="lastName">{{'LAST_NAME' | translate}}:</label>
+				
+				<input type="text" name="lastName" ng-model="userProfile.lastName" ng-model-options="{updateOn: 'blur'}" namevalidation ng-minlength="3" placeholder="Enter your last name" required/>
+				<div ng-show="userForm.lastName.$touched && userForm.lastName.$error.required">{{'NO_LAST_NAME_MESSAGE' | translate}}.</div> 
+				<div ng-show="userForm.lastName.$touched && userForm.lastName.$error.minlength">{{'INPUT_LESS_THAN_3_LETTERS_MESSAGE' | translate}}.</div>
+				<div ng-show="userForm.lastName.$touched && userForm.lastName.$invalid && !userForm.lastName.$error.minlength && !userForm.lastName.$error.required">{{'INCORRECT_UPPERCASE_LETTERS_MESSAGE' | translate}}.</div>
+			</div>
+			<div>
+				<label for="age">{{'AGE' | translate}}:</label>
+				<input type="text" name="age" ng-model="userProfile.age" ng-model-options="{updateOn: 'blur'}" agevalidation placeholder="Enter your age" required>
+				<div ng-show="userForm.age.$touched && userForm.age.$error.required">{{'NO_AGE_MESSAGE' | translate}}.</div> 
+				<div ng-show="userForm.age.$touched && userForm.age.$invalid && !userForm.age.$error.required">{{'ALLOWED_AGE' | translate}}.</div>
+			</div>
+			<div>
+				<label for="birthday">{{'BIRTHDAY' | translate}}:</label>
+				<input type="text" name="birthday" ng-model="userProfile.birthday" ng-model-options="{updateOn: 'blur'}" datevalidation ng-minlength="10" ng-maxlength="10" placeholder="DD.MM.YYYY" required>
+				<div ng-show="userForm.birthday.$touched && userForm.birthday.$error.required" translate="enterBirthday">{{'NO_BIRTHDAY_MESSAGE' | translate}}.</div>
+				<div ng-show="userForm.birthday.$touched && userForm.birthday.$invalid && !userForm.birthday.$error.required">{{'INCORRECT_DATE' | translate}}.</div>
+			</div>
+			<button ng-show="!userForm.incorrect" ng-click="userProfile.setInfo()" type="submit">{{'CHANGE' | translate}}</button>
+			<div  ng-show="userForm.$submitted && userForm.$invalid">{{'INCORRECT_INPUT_DATA' | translate}}.</div>
+	</form>
+</div>

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "firstName": "Viktoria",
+    "lastName": "Makarenko",
+	"age": "28",
+	"birthday": "10.03.1988"
+  },
+  {
+    "id": "2",
+    "firstName": "Ekaterina",
+    "lastName": "Semchenko",
+	"age": "31",
+	"birthday": "18.01.1985"
+  }
+]

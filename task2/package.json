@@ -1,8 +1,0 @@
-{
-  "name": "task2",
-  "version": "1.0.0",
-  "author": "Viktoria Makarenko",
-  "dependencies":{
-	"angular": "1.5.7"
-  }
-}

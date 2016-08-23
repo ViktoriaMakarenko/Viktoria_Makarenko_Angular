@@ -1,0 +1,18 @@
+<div class="center">
+	<form class="inline_block">
+		<div>
+			<label for="login">{{'LOGIN' | translate}}:</label>
+			<input type="text" class="login" name="login" placeholder="login" ng-model="login.login"/>
+		</div>
+		<div>
+			<label for="password">{{'PASSWORD' | translate}}:</label>
+			<input type="password" class="password" name="password" ng-model="login.password" placeholder="password"/>
+		</div>
+		<div class="center">
+			<button name="submit" ng-click="login.doLogin()">{{'LOGIN' | translate}}</button>
+		</div>
+	</form>
+	 <div>
+		<a ui-sref="forgotPassword" ng-click="login.setLogin(login.login)">{{'FORGOT_PASSWORD' | translate}}?</a>
+	</div>
+</div>
