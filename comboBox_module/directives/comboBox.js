@@ -7,7 +7,8 @@ comboBoxApp.directive('comboBox', function() {
         restrict: 'E',
         replace: true,
         templateUrl: 'comboBox_module/templates/comboBox_tpl.html',
-        scope: {model: '='},
+        scope: {model: '=',
+                config: '='},
         controllerAs: 'comboBox',
         controller: 'ComboBoxCtrl'
     };

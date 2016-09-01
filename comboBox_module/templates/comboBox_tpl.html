@@ -1,8 +1,8 @@
 <div class="comboList">
-   <input ng-model="selected" type="text" class="selected-item" ng-click="showHide()"/>
-   <ul class="list" ng-show="isVisible">
-        <li ng-repeat="item in itemsList" ng-click="chooseItem(item)">{{ item.name }}</li>
-        <button ng-click="getMore()" ng-hide="noItems">More</button>
+   <input ng-model="model" type="text" class="selected-item" ng-click="comboBox.showHide()"/>
+   <ul class="list" ng-show="comboBox.isVisible">
+        <li ng-repeat="item in comboBox.itemsList" ng-click="comboBox.chooseItem(item)">{{ item.name }}</li>
+        <button ng-click="comboBox.getMore()" ng-hide="comboBox.noItems">More</button>
    </ul>
 </div>
 

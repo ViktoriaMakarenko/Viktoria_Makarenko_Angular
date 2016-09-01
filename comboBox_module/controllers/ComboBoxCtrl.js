@@ -5,40 +5,35 @@
 comboBoxApp.controller('ComboBoxCtrl', [ '$http', '$scope', function(http, $scope){
 
     var self = this;
-    $scope.itemsList = [];
+    self.itemsList = [];
     self.page = 0;
-    self.countOfItems = 5;
+    self.getItems = $scope.config.method;
+    self.countOfItems = $scope.config.countOfItems;
 
-    self.getItems = function (info){
-        return http({
-            method: 'post',
-            url: '/getItems',
-            data: info
-        })};
-
-    $scope.getMore = function () {
+    self.getMore = function () {
         self.getItems({info: {page: self.page, counts: self.countOfItems}})
             .then(function (res) {
                 if (self.page == 0) {
-                    $scope.itemsList = [];
+                    self.itemsList = [];
                 };
                 for (var i = 0; i < res.data.newItems.length; i++) {
-                    $scope.itemsList.push(res.data.newItems[i]);
+                    self.itemsList.push(res.data.newItems[i]);
                 };
                 if (res.data.endOfJson) {
-                    $scope.noItems = true;
+                    self.noItems = true;
                 };
                 self.page++;
             });
     };
 
-    $scope.chooseItem = function(item){
-        $scope.selected = item.name;
-        $scope.showHide();
+
+    self.chooseItem = function(item){
+        $scope.model = item.name;
+        self.showHide();
     };
 
-    $scope.showHide = function () {
-        $scope.isVisible = $scope.isVisible ? false : true;
+    self.showHide = function () {
+        self.isVisible = self.isVisible ? false : true;
     };
 
 }]);
