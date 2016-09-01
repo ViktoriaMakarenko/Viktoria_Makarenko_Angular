@@ -18,5 +18,9 @@
     "moment": "2.14.1",
     "node-cache": "3.2.1"
   },
-  "main": "main.js"
+  "main": "main.js",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-concat": "2.6.0"
+  }
 }

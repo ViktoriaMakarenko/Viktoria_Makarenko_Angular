@@ -171,7 +171,7 @@ button:focus, button:hover, .md-button:hover, .md-button:not([disabled]):hover, 
 .ng-touched.ng-invalid {
  	border: 2px solid red;
 }
-.ng-touched.ng-valid {
+form .ng-touched.ng-valid {
  	border: 2px solid green;
 }
 .form_name{
@@ -203,6 +203,37 @@ button:focus, button:hover, .md-button:hover, .md-button:not([disabled]):hover, 
 }
 .buttons button{
 	margin-bottom: 0;
+}
+/*comboBox*/
+.selected-item, .comboList li{
+	height: 40px;
+	cursor: pointer;
+	width: 100%;
+	max-width: 100%;
+	margin: 0;
+}
+.selected-item{
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+.comboList li{
+	list-style: none;
+	border-top: 1px solid #ccb477;
+	padding: 5px 10px;
+	font-size: 16px;
+	line-height: 30px;
+}
+.comboList li:hover{
+	font-weight: bold;
+	background: #ccb477;
+}
+.comboList{
+	width: 100%;
+	max-width: 500px;
+	margin: 50px auto;
+	border: 1px solid #150f11;
+	border-radius: 5px;
 }
 @media screen and (max-width: 400px){
 	.logo{

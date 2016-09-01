@@ -27,7 +27,7 @@ app.post('/doLogin', function(req, res){
             if (user.login === req.body.info.login && user.password === req.body.info.password){
 					req.session.loginId = user.id;
 					loginned = true;
-            }
+            };
         });
         res.send({success: loginned, userId: req.session.loginId});
     } else {
@@ -50,6 +50,25 @@ app.delete('/logout', function(req, res) {
     req.session.destroy(function() {});
   }
   res.send('Session was destroyed');
+});
+
+app.post('/getItems', function(req, res){
+    var items = require('./data/people.json');
+    var page = req.body.info.page;
+    var count = req.body.info.counts;
+    var start = page * count;
+    var newItems = [];
+    var endOfJson = false;
+    var end = (page + 1) * count;
+    if (end >= items.length){
+        end = items.length;
+        endOfJson = true;
+    };
+    for (var i = start; i < end; i++){
+        newItems.push(items[i]);
+    };
+    req.session.touch(req.session.id, req.session);
+    res.send({success: true, newItems: newItems, endOfJson: endOfJson});
 });
 
 app.all('*', function(req, res, next) {

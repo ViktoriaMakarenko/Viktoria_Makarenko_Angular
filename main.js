@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('app',['ui.router','ngMaterial', 'ngAnimate', 'ngAria', 'pascalprecht.translate']);
+var app = angular.module('app',['ui.router','ngMaterial', 'ngAnimate', 'ngAria', 'pascalprecht.translate', 'comboBoxApp']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $translateProvider){
 		
@@ -49,6 +49,13 @@ app.config(function ($stateProvider, $urlRouterProvider, $translateProvider){
 						return infoService.init();
 					}
 				}
+			})
+			.state('comboBox', {
+				parent: 'mainPage',
+				url: '/comboBox',
+				templateUrl: 'app/comboBox/templates/comboBox.html',
+				controllerAs: 'combo',
+				controller: 'ComboCtrl'
 			});
 			
 		$translateProvider.useStaticFilesLoader({
