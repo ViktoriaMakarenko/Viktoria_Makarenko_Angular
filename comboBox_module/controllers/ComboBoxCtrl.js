@@ -5,27 +5,24 @@
 comboBoxApp.controller('ComboBoxCtrl', [ '$http', '$scope', function(http, $scope){
 
     var self = this;
+
     self.itemsList = [];
-    self.page = 0;
     self.getItems = $scope.config.method;
     self.countOfItems = $scope.config.countOfItems;
 
     self.getMore = function () {
-        self.getItems({info: {page: self.page, counts: self.countOfItems}})
+        self.getItems({info: {counts: self.countOfItems, filter: $scope.textForFilter, start: self.start}})
             .then(function (res) {
-                if (self.page == 0) {
+                if (self.start == 0) {
                     self.itemsList = [];
                 };
+                self.start = res.data.start;
                 for (var i = 0; i < res.data.newItems.length; i++) {
                     self.itemsList.push(res.data.newItems[i]);
                 };
-                if (res.data.endOfJson) {
-                    self.noItems = true;
-                };
-                self.page++;
+                self.noItems = res.data.endOfJson;
             });
     };
-
 
     self.chooseItem = function(item){
         $scope.model = item.name;
@@ -35,5 +32,10 @@ comboBoxApp.controller('ComboBoxCtrl', [ '$http', '$scope', function(http, $scop
     self.showHide = function () {
         self.isVisible = self.isVisible ? false : true;
     };
+
+    $scope.$watch('textForFilter', function() {
+            self.start = 0;
+            self.getMore();
+    });
 
 }]);

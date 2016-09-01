@@ -1,4 +1,7 @@
 <ui-view>
-    <div>{{combo.model}}</div>
+    <div class="font0 left">
+        <div class="inline_block tab" ui-sref="user">{{'USER_INFO' | translate}}</div>
+        <div class="inline_block tab active">ComboBox</div>
+    </div>
     <combo-box model="combo.model" config="combo.config"></combo-box>
 </ui-view>

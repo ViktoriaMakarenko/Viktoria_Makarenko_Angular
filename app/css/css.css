@@ -194,8 +194,12 @@ form .ng-touched.ng-valid {
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	margin-left: -32px;
-	margin-top: -32px;
+	margin-left: -20px;
+	margin-top: -20px;
+	background: url('/app/images/loader.gif') no-repeat center;
+	background-size: contain;
+	width: 40px;
+	height: 40px;
 }
 .buttons{
 	width: 40%;
@@ -211,6 +215,9 @@ form .ng-touched.ng-valid {
 	width: 100%;
 	max-width: 100%;
 	margin: 0;
+	padding: 5px 10px;
+	font-size: 16px;
+	line-height: 30px;
 }
 .selected-item{
 	border: none;
@@ -220,9 +227,6 @@ form .ng-touched.ng-valid {
 .comboList li{
 	list-style: none;
 	border-top: 1px solid #ccb477;
-	padding: 5px 10px;
-	font-size: 16px;
-	line-height: 30px;
 }
 .comboList li:hover{
 	font-weight: bold;
@@ -234,6 +238,9 @@ form .ng-touched.ng-valid {
 	margin: 50px auto;
 	border: 1px solid #150f11;
 	border-radius: 5px;
+}
+.comboList button {
+	margin: 20px;
 }
 @media screen and (max-width: 400px){
 	.logo{
